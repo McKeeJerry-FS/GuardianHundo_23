@@ -4,6 +4,7 @@ This is the first of many JavaScript challenges that will be created throughout 
 </p>
 <p>
 This challege was created using three functions:
+
 ### getValues
 
 ### generateValues
