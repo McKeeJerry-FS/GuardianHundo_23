@@ -1,12 +1,5 @@
-function displayMessage() {
-    // get the text out of input and assign to a variable
-    let msg = document.getElementById('message').value;
-    
-    Swal.fire(
-        {
-            backdrop: false,
-            title: 'APP NAME',
-            text: msg, // <-- replace this with the variable
-        }
-    );
-}
+// Get the numbers from the page
+
+// Generate a list of all numbers between the start and end values
+
+// display each of those numbers on the page
