@@ -10,11 +10,24 @@ function getValues(){
     startValue = parseInt(startValue); // 0
     endValue = parseInt(endValue); // 100
 
-    // generate the range of numbers
-    let generatedValues = generateValues(startValue, endValue);
-    
-    // display the list of numbers 
-    displayValues(generatedValues);
+    // Validate user input
+    if (Number.isInteger(startValue) && Number.isInteger(endValue))
+    {
+        // generate the range of numbers
+        let generatedValues = generateValues(startValue, endValue);
+        // we call displayNumbers
+        displayValues(generatedValues);
+    }
+    else 
+    {
+        Swal.fire(
+        {
+            icon: 'error',
+            backdrop: false,
+            title: 'Oops!',
+            text: 'Please enter valid numbers only.'
+        });
+    }
 }
 
 // Generate a list of all numbers between the start and end values
