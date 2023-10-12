@@ -11,7 +11,7 @@ function getValues(){
     endValue = parseInt(endValue); // 100
 
     // Validate user input
-    if (Number.isInteger(startValue) && Number.isInteger(endValue))
+    if (Number.isInteger(startValue) && Number.isInteger(endValue) && startValue < endValue)
     {
         // generate the range of numbers
         let generatedValues = generateValues(startValue, endValue);
@@ -25,7 +25,7 @@ function getValues(){
             icon: 'error',
             backdrop: false,
             title: 'Oops!',
-            text: 'Please enter valid numbers only.'
+            text: 'Please enter valid numbers only. Ensure start number is less than end number'
         });
     }
 }
