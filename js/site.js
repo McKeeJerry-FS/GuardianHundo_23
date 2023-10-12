@@ -20,24 +20,30 @@ function getValues(){
     // );
 
     // generate the range of numbers
-    generateValues(startValue, endValue);
+    let generatedValues = generateValues(startValue, endValue);
+
+    displayValues(generateValues);
 }
 
 
 // Generate a list of all numbers between the start and end values
 function generateValues(start, end){
     // create a variable the can hold a bunch of numbers
+    let numbers = [];
     
     // put the start value into that variable
     // add one to that number, then add that to the variable
     // keep adding one  and putting it into variable UNTIL you reach the end value
-
-    // somehow tell displayValues to show those numbers
-
-
+    for(let n = start; n <= end; n++) {
+        numbers.push(n);
+    }
+    return numbers;   
 }
-
+    
 // display each of those numbers on the page
-function displayValues(){
+function displayValues(numbers){
 
 }
+
+
+
