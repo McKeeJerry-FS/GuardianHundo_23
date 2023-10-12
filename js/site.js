@@ -1,3 +1,4 @@
+// from site.js
 // Get the numbers from the page
 function getValues(){
     // get the start number
@@ -57,8 +58,6 @@ function displayValues(numbers){
     // e.g. <tr><td> i </td></tr>
     let tbody = document.getElementById('results');
     tbody.innerHTML = html;
-    
-
 }
         
     
