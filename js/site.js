@@ -9,22 +9,12 @@ function getValues(){
     startValue = parseInt(startValue); // 0
     endValue = parseInt(endValue); // 100
 
-    // testing the function
-    
-    // Swal.fire(
-    //     {
-    //         backdrop: false,
-    //         title: 'CENTENNIAL',
-    //         text: 'Start value is ' + startValue +  ' and End value is ' + endValue, // <-- replace this with the variable
-    //     }
-    // );
-
     // generate the range of numbers
     let generatedValues = generateValues(startValue, endValue);
-
-    displayValues(generateValues);
+    
+    // display the list of numbers 
+    displayValues(generatedValues);
 }
-
 
 // Generate a list of all numbers between the start and end values
 function generateValues(start, end){
@@ -43,7 +33,27 @@ function generateValues(start, end){
 // display each of those numbers on the page
 function displayValues(numbers){
 
+    // create a variable for the HTML + numbers
+    let html = '';
+
+    // make a loop to get each number from the array
+    for (let index = 0; index < numbers.length; index = index + 1){
+
+        let currentNumber = numbers[index];
+
+        html = html + '<tr><td>' + currentNumber + '</td></tr>'; 
+    }
+    
+    // with each number, put it on the page
+    // e.g. <tr><td> i </td></tr>
+    let tbody = document.getElementById('results');
+    tbody.innerHTML = html;
+    /* 
+        TODO: make the even numbers bold
+    */
 }
+        
+    
 
 
 
