@@ -37,20 +37,28 @@ function displayValues(numbers){
     let html = '';
 
     // make a loop to get each number from the array
-    for (let index = 0; index < numbers.length; index = index + 1){
-
+    for (let index = 0; index < numbers.length; index += 1){
+        
+        let className = '';
         let currentNumber = numbers[index];
 
-        html = html + '<tr><td>' + currentNumber + '</td></tr>'; 
+        if (currentNumber % 2 == 0 ){
+            // if currentNumber is even
+            className = 'even';
+        }
+        else {
+            // if currentNumber is odd
+            className = 'odd';
+        }
+        html +=  `<tr><td class="${className}">${currentNumber}</td></tr>`; 
     }
     
     // with each number, put it on the page
     // e.g. <tr><td> i </td></tr>
     let tbody = document.getElementById('results');
     tbody.innerHTML = html;
-    /* 
-        TODO: make the even numbers bold
-    */
+    
+
 }
         
     
