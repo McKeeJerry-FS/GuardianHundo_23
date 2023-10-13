@@ -11,23 +11,36 @@ function getValues(){
     endValue = parseInt(endValue); // 100
 
     // Validate user input
-    if (Number.isInteger(startValue) && Number.isInteger(endValue) && startValue < endValue)
-    {
-        // generate the range of numbers
-        let generatedValues = generateValues(startValue, endValue);
-        // we call displayNumbers
-        displayValues(generatedValues);
-    }
-    else 
-    {
-        Swal.fire(
+    if (startValue !== null && endValue !== null || isEmptyOrSpaces(startValue) && isEmptyOrSpaces(endValue)){
+        if (Number.isInteger(startValue) && Number.isInteger(endValue) && startValue < endValue)
         {
-            icon: 'error',
-            backdrop: false,
-            title: 'Oops!',
-            text: 'Please enter valid numbers only. Ensure start number is less than end number'
-        });
+            // generate the range of numbers
+            let generatedValues = generateValues(startValue, endValue);
+            // we call displayNumbers
+            displayValues(generatedValues);
+        }
+        else 
+        {
+            Swal.fire(
+            {
+                icon: 'error',
+                backdrop: false,
+                title: 'Oops!',
+                text: 'Please enter valid numbers only. Ensure start number is less than end number'
+            });
+        }
+    } else {
+        Swal.fire(
+            {
+                icon: 'error',
+                title: 'Oops...',
+                text: ' Please ensure all fields contain a number'
+            }
+        )
     }
+
+
+
 }
 
 // Generate a list of all numbers between the start and end values
